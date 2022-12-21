@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Home</title>{% endblock %}
+
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h1> Solage Academy minna </h1>
+<div class="shadow p-4 mb-5 bg-body rounded"   style="text-align: center; margin: auto ; padding: 5px; width: 50%; height: 50%;"  ></div>
+    <form action="" method="post" enctype="multipart/form-data" class="form-control">
+    {% csrf_token %}
+    {{form.media}}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-secondary btn-lg" style="background-color: #010202; text-align: center;">Submit</button>
+</div>
+
+</form>
+`
+
+
+{% endblock  %}
+

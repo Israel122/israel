@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<img src="{{Reg.Photo.url}}" alt="image" width="100" height="100" style="border-radius: 100px">
+<p>Sur name = {{Reg.Sur_name}}</p>
+<p>First name = {{Reg.First_name}}</p>
+<p>Middle name = {{Reg.Middle_name}}</p>
+<p>Data of birth = {{Reg.Date_of_birth}}</p>
+<p>Age = {{Reg.Age}}</p>
+<p>Postal Address = {{Reg.Postal_Address}}</p>
+<p>Residential Address = {{Reg.Residential_Address}}</p>
+<p>Latest School Address = {{Reg.Latest_School_Address}}</p>
+<p>Latest class Attended = {{Reg.Latest_class_Attended}}</p>
+<p>Home Telephone Number = {{Reg.Home_Telephone_Number}}</p>
+<p>Name of Father = {{Reg.Name_of_Father}}</p>
+<p>Occpation of Father = {{Reg.Occpation_of_Father}}</p>
+<p>Contact Address of Father = {{Reg.Contact_Address_of_Father}}</p>
+<p>Tel No of Father = {{Reg.Tel_No_of_Father}}</p>
+<p>Name of Mother = {{Reg.Name_of_Mother}}</p>
+<p>Occpation of Mother = {{Reg.Occpation_of_Mother}}</p>
+<p>Contact Address of Mother = {{Reg.Contact_Address_of_Mother}}</p>
+<p>Tel No of Mother = {{Reg.Tel_No_of_Mother}}</p>
+<p>In case of any emergency contact = {{Reg.In_case_of_any_emergency_contact}}</p>
+<p>Any allery or physical defect = {{Reg.Any_allery_or_physical_defect}}</p>
+<h4 style="color: rgb(220, 20, 20);">This form ca no longer be Edit when save</h4>
+<a href="{% url 'update' Reg.pk %}">Edit</a>
+<a href="{% url 'thank' %}">save</a>
+{% endblock content %}

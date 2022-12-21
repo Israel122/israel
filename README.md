@@ -1,3 +1,0 @@
-# israel
-# israel
-# israel
