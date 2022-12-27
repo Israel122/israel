@@ -1,13 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+
+{% load crispy_forms_tags %}
+<body style="background-color: #cd3838; text-align: center" >
+<h1> Solage Academy minna </h1>
 <h1>Update/Edit form</h1>
-
-<form action="" method="post" enctype="multipart/form-data">
+<div class="shadow p-4 mb-7 bg-body rounded"   style="text-align: left; margin: auto ; padding: 5px; width: 50%; height: 50%;"    >
+    <form action="" method="post" enctype="multipart/form-data" class="form-control">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Update">
-</form>
+    {{form.media}}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-secondary btn-lg" style="background-color: #010202; text-align: center;">Submit</button>
+</div>
 
+</form>
 
 {% endblock content %}

@@ -50,9 +50,7 @@
     {% endblock %}
 
 </head>
-{% load static %}
-<link rel="stylesheet" href="{% static 'image/c.jpg' %}">
-<body style="background-image:url('{% static 'image/c.jpg' %}'); background-repeat: no-repeat; background-size: 100%">
+<body>
   {% if user.is_authenticated %}
   <p>Hi {{user.username}}</p>
 

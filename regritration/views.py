@@ -8,7 +8,7 @@ from django.views.generic import (
 )
 from .models import Reg
 from .forms import RegCustom
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin,PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
 
 
 # Create your views here.
@@ -32,7 +32,7 @@ class RegList(LoginRequiredMixin, ListView):
 class RegDetail(LoginRequiredMixin, UserPassesTestMixin, DetailView,):
     model = Reg
     template_name = 'rgritration/RegDetail.html'
-    fields = "__all__"
+    fields = "__all_"
     context_object_name = "Reg"
     def test_func(self):
         user = self.get_object()
@@ -42,8 +42,10 @@ class RegDetail(LoginRequiredMixin, UserPassesTestMixin, DetailView,):
 
 class RegUpdate(LoginRequiredMixin,UserPassesTestMixin, UpdateView ):
     model = Reg
+    form_class = RegCustom
     template_name = 'rgritration/Regupdate.html'
-    fields = "__all__"
+
+
     
     def test_func(self):
         user = self.get_object()
@@ -57,5 +59,18 @@ class RegTemplate(LoginRequiredMixin, TemplateView,):
     #     return user.author == self.request.user
 
 
-class home(CreateView):
+class homedetail(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+    model = Reg
+    field = "__all__"
+    context_object_name = "Reg"
+    template_name = 'rgritration/RegDetail2.html'
+    def test_func(self):
+        user = self.get_object()
+        return user.author == self.request.user
+
+class home(TemplateView):
     template_name = 'rgritration/home.html'
+    model = Reg
+
+
+
